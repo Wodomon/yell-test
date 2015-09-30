@@ -1,0 +1,1 @@
+SELECT max(date_publish) as latest, title, user_id FROM mgm_news GROUP BY user_id LIMIT 10; 
