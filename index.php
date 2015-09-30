@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors', 'on');
+
 require 'Shapes.php';
 require 'Shaper.php';
 
