@@ -5,10 +5,10 @@ require 'Shaper.php';
 
 class App {
     
-    private $shapes;
+    private $_shapes;
     
     public function __construct() {
-        $this->shapes = [
+        $this->_shapes = [
             ['type' => 'circle', 'params' => [/*some params*/]],
             ['type' => 'triangle', 'params' => [/*some params*/]],
             ['type' => 'square', 'params' => [/*some other params*/]]
@@ -16,8 +16,10 @@ class App {
     }
     
     public function run(){
+        $shapes = ($_POST['shapes']) ?: $this->_shapes;
+        
         $shaper = new Shaper();
-        foreach($this->shapes as $shape){
+        foreach($shapes as $shape){
             echo $shaper->render($shape).'<br>';
         }
     }
